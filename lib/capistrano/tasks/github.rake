@@ -36,7 +36,7 @@ namespace :github do
   namespace :deployment do
     desc 'Create new deployment'
     task :create do
-      next if fetch(:github_deployment_skip)
+      next if fetch(:github_deployment_skip) || fetch(:current_github_deployment)
 
       gh = fetch(:github_deployment_api)
       payload = fetch(:github_deployment_payload)
