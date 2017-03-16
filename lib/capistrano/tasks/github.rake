@@ -71,7 +71,7 @@ namespace :github do
     end
   end
 
-  print_deployment = -> d { puts "Deployment (#{d.last_state}): #{d.created_at} #{d.ref}@#{d.sha} to #{d.environment} by @#{d.creator_login}" }
+  print_deployment = -> d { puts "Deployment##{d.id} (#{d.last_state}): #{d.created_at} #{d.ref}@#{d.sha} to #{d.environment} by @#{d.creator_login}" }
   print_status = -> s { puts "\t#{s.created_at} state: #{s.state}" }
 
   desc 'List Github deployments'
