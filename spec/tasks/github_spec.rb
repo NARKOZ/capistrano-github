@@ -19,7 +19,7 @@ RSpec.describe 'github:deployment:create' do
 
       it do
         expect(api).to receive(:create_deployment)
-                           .with(branch, auto_merge: false, environment: stage, payload: {})
+                           .with(branch, auto_merge: false, environment: stage, payload: {}, required_contexts: [])
                            .and_return('some-id')
       end
     end

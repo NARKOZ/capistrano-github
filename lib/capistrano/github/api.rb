@@ -4,7 +4,7 @@ module Capistrano
   module Github
     class API
       class Deployment
-        attr_accessor :created_at, :ref, :sha, :creator_login, :payload, :statuses_proc, :id, :environment
+        attr_accessor :created_at, :ref, :sha, :creator_login, :payload, :required_contexts, :statuses_proc, :id, :environment
 
         def statuses
           @statuses ||= statuses_proc.call
@@ -45,6 +45,7 @@ module Capistrano
             dep.ref = d.ref
             dep.creator_login = d.creator.login
             dep.payload = d.payload
+            dep.required_contexts = d.required_contexts
             dep.id = d.id
             dep.environment = d.environment
 
