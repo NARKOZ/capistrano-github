@@ -50,7 +50,7 @@ namespace :github do
       end
     end
 
-    [:pending, :success, :error, :failure].each do |status|
+    [:pending, :in_progress, :success, :error, :failure].each do |status|
       desc "Mark current deployment as #{status}"
       task status => 'github:deployment:create' do
         next if fetch(:github_deployment_skip)
