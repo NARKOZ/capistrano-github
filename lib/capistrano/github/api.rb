@@ -33,8 +33,8 @@ module Capistrano
         @client.create_deployment(@repo, branch, options).id
       end
 
-      def create_deployment_status(id, state)
-        @client.create_deployment_status(deployment_url(id), state)
+      def create_deployment_status(id, state, environment_url = '')
+        @client.create_deployment_status(deployment_url(id), state, environment_url: environment_url)
       end
 
       def deployments(options = {})
