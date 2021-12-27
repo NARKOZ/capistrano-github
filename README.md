@@ -6,12 +6,11 @@ In January 2014 Github Team [announced Deployments API](http://developer.github.
 
 Add this line to your application's Gemfile:
 
-    gem 'capistrano-github', github: '3scale/capistrano-github'
+    gem 'capistrano-github', github: 'NARKOZ/capistrano-github'
 
 And then execute:
 
     $ bundle
-
 
 Require github tasks and set `github_access_token`:
 
@@ -31,7 +30,7 @@ after  'deploy:finished', 'github:deployment:success'
 after  'deploy:failed',   'github:deployment:failure'
 ```
 
-You can get your personal GH token [here](https://github.com/settings/applications)
+You can get your personal GH token [here](https://github.com/settings/tokens) (`repo_deployment` scope is enough)
 
 ## Usage
 
@@ -45,7 +44,7 @@ cap production github:deployments
 
 ## Contributing
 
-1. Fork it ( http://github.com/3scale/capistrano-github/fork )
+1. Fork it ( http://github.com/NARKOZ/capistrano-github/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
